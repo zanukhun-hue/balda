@@ -257,3 +257,114 @@ input.input--error { animation: shake .33s ease; border-color: rgba(255,106,128,
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* --- Birthday archive v2 --- */
+.screen--scroll {
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding-top: 12px;
+  padding-bottom: 28px;
+  scrollbar-width: none;
+}
+.screen--scroll::-webkit-scrollbar { display: none; }
+.screen--scroll .primary-button { flex: 0 0 auto; margin-top: 22px; }
+
+.photo-card {
+  position: relative;
+  margin: 24px 0 4px;
+  padding: 10px 10px 15px;
+  border-radius: 24px;
+  background: #f6edf3;
+  color: #24131e;
+  box-shadow: 0 26px 70px rgba(0,0,0,.35);
+  transform: rotate(-1.2deg);
+}
+.photo-card img { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 16px; }
+.photo-card figcaption { padding: 11px 7px 1px; font-size: 12px; font-weight: 800; line-height: 1.45; letter-spacing: -.01em; }
+.photo-card--hero { max-width: 390px; align-self: center; }
+.photo-card--small { width: min(76vw, 310px); align-self: center; margin-bottom: 27px; transform: rotate(1.7deg); }
+.photo-card__tape { position: absolute; z-index: 3; width: 88px; height: 25px; top: -10px; left: 50%; transform: translateX(-50%) rotate(2deg); background: rgba(255,220,237,.72); backdrop-filter: blur(3px); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+
+.polaroid-stack { position: relative; height: 430px; margin: 26px 0 8px; }
+.polaroid {
+  position: absolute;
+  width: 62%;
+  margin: 0;
+  padding: 8px 8px 28px;
+  border-radius: 10px;
+  background: #fff9fc;
+  color: #25151f;
+  box-shadow: 0 20px 55px rgba(0,0,0,.38);
+  transform-origin: center;
+}
+.polaroid img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; }
+.polaroid figcaption { padding: 8px 4px 0; font-size: 10px; line-height: 1.35; font-weight: 800; }
+.polaroid--one { left: 1%; top: 5px; transform: rotate(-8deg); }
+.polaroid--two { right: 0; top: 98px; transform: rotate(7deg); }
+.polaroid--three { left: 10%; top: 205px; transform: rotate(-3deg); }
+
+.choice-grid--compact { gap: 9px; margin-top: 22px; }
+.choice-grid--compact .choice-card { padding: 14px; }
+.choice-grid--compact .choice-card__emoji { width: 42px; height: 42px; }
+
+.stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px; }
+.stat-card { padding:16px; min-height:128px; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.045); }
+.stat-card strong, .stat-card > span { color:var(--pink-soft); font-size:40px; line-height:1; font-weight:800; letter-spacing:-.06em; }
+.stat-card small { display:block; margin-top:10px; color:var(--muted); font-size:10px; line-height:1.45; }
+.stat-card--wide { grid-column:1/-1; min-height:auto; }
+.reference-card { margin:14px 0 0; padding:8px; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.04); }
+.reference-card img { display:block; width:100%; border-radius:14px; }
+.reference-card figcaption { padding:10px 6px 4px; color:rgba(255,255,255,.52); font-size:10px; line-height:1.45; }
+
+.memory-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:24px; }
+.memory-grid figure { margin:0; overflow:hidden; border-radius:18px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); box-shadow:0 15px 35px rgba(0,0,0,.2); }
+.memory-grid img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; }
+.memory-grid__wide { grid-column:1/-1; }
+.memory-grid__wide img { aspect-ratio:16/10; object-position:center; }
+
+.final-copy { margin:20px 0 0; color:#e6dce7; font-size:15px; line-height:1.75; }
+.final-copy--small { color:var(--muted); font-size:13px; }
+.final-photo-wrap { position:relative; margin:24px auto 0; width:min(78vw,340px); }
+.final-photo { position:relative; z-index:2; display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:28px; border:1px solid rgba(255,255,255,.14); box-shadow:0 28px 80px rgba(0,0,0,.38); animation:finalReveal 1.2s cubic-bezier(.2,.75,.2,1) both; }
+.final-photo-glow { position:absolute; inset:12%; z-index:1; background:#ff4dac; filter:blur(60px); opacity:.34; }
+@keyframes finalReveal { from { opacity:0; transform:scale(.88); filter:blur(18px) saturate(.4); } to { opacity:1; transform:scale(1); filter:blur(0) saturate(1); } }
+
+@media (max-height: 760px) {
+  .polaroid-stack { height: 390px; transform:scale(.9); transform-origin:top center; margin-bottom:-20px; }
+  .photo-card--hero { max-width: 320px; }
+}
+
+/* --- Local jokes v3 --- */
+.legal-card {
+  position: relative;
+  margin-top: 24px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 22px;
+  background: rgba(255,255,255,.05);
+  box-shadow: inset 0 1px rgba(255,255,255,.04);
+}
+.legal-card > span { display:block; color:rgba(255,255,255,.42); font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.legal-card strong { display:block; margin-top:6px; max-width:78%; font-size:18px; line-height:1.35; }
+.legal-card small { display:block; margin-top:18px; color:var(--muted); font-size:11px; }
+.legal-card__stamp { position:absolute; right:-16px; top:17px; padding:7px 21px; border:2px solid rgba(255,103,189,.38); color:rgba(255,181,222,.62); border-radius:7px; font-size:10px; font-weight:900; letter-spacing:.12em; transform:rotate(11deg); }
+.local-reaction { min-height:34px; margin-top:12px; color:var(--pink-soft); }
+
+.chat-evidence { display:flex; flex-direction:column; gap:9px; margin-top:24px; padding:18px; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.04); }
+.chat-bubble { width:fit-content; max-width:82%; padding:10px 13px; border-radius:16px; font-size:12px; line-height:1.4; }
+.chat-bubble--mine { align-self:flex-end; background:linear-gradient(135deg,rgba(255,103,189,.28),rgba(255,60,167,.18)); border-bottom-right-radius:5px; }
+.chat-bubble--her { align-self:flex-start; background:rgba(255,255,255,.08); border-bottom-left-radius:5px; }
+.chat-deleted { margin:8px auto 0; color:rgba(255,255,255,.33); font-size:10px; text-align:center; }
+.chat-deleted::before { content:"⌫ "; color:var(--pink); }
+
+.cat-known { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px; margin-top:25px; padding:16px 17px; border:1px solid rgba(143,255,197,.16); border-radius:18px; background:rgba(143,255,197,.045); }
+.cat-known span { color:var(--muted); font-size:11px; }
+.cat-known strong { font-size:19px; }
+.cat-known b { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; color:#0a2118; background:var(--green); }
+.cat-result { margin-top:18px; padding:18px; border:1px solid rgba(255,103,189,.18); border-radius:22px; background:rgba(255,77,170,.055); }
+.cat-result > span { display:block; color:rgba(255,255,255,.44); font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
+.cat-result strong { display:block; margin-top:7px; color:var(--pink-soft); font-size:24px; line-height:1.2; }
+.cat-result p { margin:8px 0 0; color:var(--muted); font-size:12px; line-height:1.5; }
+.cat-result .primary-button { margin-top:15px; }
+.is-hidden { display:none !important; }

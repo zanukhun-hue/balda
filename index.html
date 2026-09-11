@@ -20,30 +20,18 @@
   <main class="app-shell" id="app">
     <section class="screen screen--active" data-screen="gate" aria-labelledby="gate-title">
       <div class="eyebrow">Сверхсекретная система идентификации</div>
-      <div class="hero-mark" aria-hidden="true">
-        <span>✦</span>
-      </div>
+      <div class="hero-mark" aria-hidden="true"><span>✦</span></div>
       <h1 id="gate-title">Когда у тебя<br><em>день рождения?</em></h1>
       <p class="subtitle">Контрольный вопрос. Уровень сложности: подозрительно высокий.</p>
 
       <form class="form-card" id="birthday-form" novalidate>
         <label for="birthday">Дата рождения</label>
         <div class="input-wrap">
-          <input
-            id="birthday"
-            name="birthday"
-            type="text"
-            inputmode="numeric"
-            autocomplete="bday"
-            placeholder="ДД.ММ.ГГГГ"
-            maxlength="10"
-            aria-describedby="form-message"
-          />
+          <input id="birthday" name="birthday" type="text" inputmode="numeric" autocomplete="bday" placeholder="ДД.ММ.ГГГГ" maxlength="10" aria-describedby="form-message" />
           <span class="input-icon" aria-hidden="true">⌁</span>
         </div>
         <button class="primary-button" type="submit" id="check-button">
-          <span class="button-text">Проверить</span>
-          <span class="button-arrow" aria-hidden="true">→</span>
+          <span class="button-text">Проверить</span><span class="button-arrow" aria-hidden="true">→</span>
         </button>
         <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
       </form>
@@ -53,41 +41,24 @@
 
     <section class="screen" data-screen="success" aria-labelledby="success-title">
       <div class="status-orbit" aria-hidden="true">
-        <div class="status-orbit__ring"></div>
-        <div class="status-orbit__ring status-orbit__ring--two"></div>
-        <div class="status-orbit__core">✓</div>
+        <div class="status-orbit__ring"></div><div class="status-orbit__ring status-orbit__ring--two"></div><div class="status-orbit__core">✓</div>
       </div>
       <div class="eyebrow eyebrow--success">Личность почти подтверждена</div>
       <h2 id="success-title">О, отлично.</h2>
       <p class="big-copy">Молодец, что указала.</p>
       <p class="punchline">А то я сам не знал просто.</p>
       <div class="data-pill"><span>Получено:</span><strong id="birthday-output">—</strong></div>
-      <button class="primary-button primary-button--wide" type="button" data-next="assessment">
-        <span>Продолжить проверку</span><span aria-hidden="true">→</span>
-      </button>
+      <button class="primary-button primary-button--wide" type="button" data-next="assessment"><span>Продолжить проверку</span><span>→</span></button>
     </section>
 
     <section class="screen" data-screen="assessment" aria-labelledby="assessment-title">
       <div class="eyebrow">Финальный этап серьёзного тестирования</div>
       <h2 id="assessment-title">Как ощущения от нового уровня?</h2>
       <p class="subtitle">Выбери максимально научный вариант.</p>
-
-      <div class="choice-grid" id="choice-grid">
-        <button class="choice-card" type="button" data-choice="young">
-          <span class="choice-card__emoji">✨</span>
-          <span class="choice-card__title">Всё ещё молода</span>
-          <span class="choice-card__meta">официальная версия</span>
-        </button>
-        <button class="choice-card" type="button" data-choice="back">
-          <span class="choice-card__emoji">🪑</span>
-          <span class="choice-card__title">Спина уже что-то знает</span>
-          <span class="choice-card__meta">неофициальная версия</span>
-        </button>
-        <button class="choice-card" type="button" data-choice="deny">
-          <span class="choice-card__emoji">🙈</span>
-          <span class="choice-card__title">Я отказываюсь отвечать</span>
-          <span class="choice-card__meta">самый мудрый выбор</span>
-        </button>
+      <div class="choice-grid">
+        <button class="choice-card" type="button" data-choice="young"><span class="choice-card__emoji">✨</span><span class="choice-card__title">Всё ещё молода</span><span class="choice-card__meta">официальная версия</span></button>
+        <button class="choice-card" type="button" data-choice="back"><span class="choice-card__emoji">🪑</span><span class="choice-card__title">Спина уже что-то знает</span><span class="choice-card__meta">неофициальная версия</span></button>
+        <button class="choice-card" type="button" data-choice="deny"><span class="choice-card__emoji">🙈</span><span class="choice-card__title">Я отказываюсь отвечать</span><span class="choice-card__meta">самый мудрый выбор</span></button>
       </div>
     </section>
 
@@ -97,42 +68,160 @@
       <h2 id="verdict-title">Ответ записан.</h2>
       <p class="big-copy" id="choice-reaction">Спасибо за участие в исследовании.</p>
       <p class="punchline">Он, кстати, вообще ни на что не влияет.</p>
-      <div class="fake-stat">
-        <span class="fake-stat__number" data-counter="100">0</span><span class="fake-stat__suffix">%</span>
-        <span class="fake-stat__label">вероятность, что сегодня надо принимать поздравления</span>
-      </div>
-      <button class="primary-button primary-button--wide" type="button" data-next="teaser">
-        <span>Ладно, дальше</span><span aria-hidden="true">→</span>
-      </button>
+      <div class="fake-stat"><span class="fake-stat__number" data-counter="100">0</span><span class="fake-stat__suffix">%</span><span class="fake-stat__label">вероятность, что сегодня надо принимать поздравления</span></div>
+      <button class="primary-button primary-button--wide" type="button" data-next="teaser"><span>Ладно, дальше</span><span>→</span></button>
     </section>
 
     <section class="screen" data-screen="teaser" aria-labelledby="teaser-title">
       <div class="gift" id="gift" aria-hidden="true">
         <div class="gift__lid"><span class="gift__bow gift__bow--left"></span><span class="gift__bow gift__bow--right"></span></div>
-        <div class="gift__box"><span class="gift__ribbon"></span></div>
-        <div class="gift__glow"></div>
+        <div class="gift__box"><span class="gift__ribbon"></span></div><div class="gift__glow"></div>
       </div>
       <div class="eyebrow">Ну вот. Формальности закончились.</div>
       <h2 id="teaser-title">По этому поводу я зачем-то сделал целый сайт.</h2>
       <p class="subtitle">Да, можно было просто написать «с днём рождения». Но где тогда неоправданное количество анимаций?</p>
-      <button class="primary-button primary-button--wide" type="button" id="open-gift">
-        <span>Открыть поздравление</span><span aria-hidden="true">✦</span>
-      </button>
-      <p class="chapter-note">Следующая глава будет здесь: фото, ваши приколы, выборы и финальный reveal.</p>
+      <button class="primary-button primary-button--wide" type="button" id="open-gift"><span>Открыть поздравление</span><span>✦</span></button>
     </section>
 
-    <section class="screen" data-screen="coming" aria-labelledby="coming-title">
-      <div class="confetti-anchor" aria-hidden="true">🎂</div>
-      <div class="eyebrow eyebrow--success">Глава 1 готова</div>
-      <h2 id="coming-title">Теперь начинается настоящее поздравление.</h2>
-      <p class="subtitle">Каркас уже работает. Дальше сюда добавим ваши фотографии, локальные мемы, мини-выборы и нормальный финал вместо этой технической таблички.</p>
-      <div class="roadmap-card">
-        <div><span>01</span> Фотоархив / воспоминания</div>
-        <div><span>02</span> Пара абсурдных вопросов</div>
-        <div><span>03</span> Шуточная статистика</div>
-        <div><span>04</span> Финальное личное поздравление</div>
+    <section class="screen screen--scroll" data-screen="evidence" aria-labelledby="evidence-title">
+      <div class="eyebrow">Архив открыт · улика 001</div>
+      <h2 id="evidence-title">Нашёлся компромат.</h2>
+      <p class="subtitle">Юристы просили это не публиковать. Юристов у нас нет.</p>
+      <figure class="photo-card photo-card--hero">
+        <div class="photo-card__tape"></div>
+        <img src="./assets/photos/photo-05.jpg" alt="Архивная фотография" loading="eager" />
+        <figcaption>архивная съёмка · адекватность не подтверждена</figcaption>
+      </figure>
+      <button class="primary-button" type="button" data-next="archive"><span>Смотреть дальше, к сожалению</span><span>→</span></button>
+    </section>
+
+    <section class="screen screen--scroll" data-screen="archive" aria-labelledby="archive-title">
+      <div class="eyebrow">Личный фотоархив</div>
+      <h2 id="archive-title">Система утверждает, что это всё реально было.</h2>
+      <p class="subtitle">Три документа, которые невозможно развидеть.</p>
+      <div class="polaroid-stack" aria-label="Подборка фотографий">
+        <figure class="polaroid polaroid--one"><img src="./assets/photos/photo-03.jpg" alt="Фотография из архива" loading="lazy"><figcaption>«нормальное фото» — попытка №47</figcaption></figure>
+        <figure class="polaroid polaroid--two"><img src="./assets/photos/photo-04.jpg" alt="Фотография из архива" loading="lazy"><figcaption>очки есть. план действий отсутствует.</figcaption></figure>
+        <figure class="polaroid polaroid--three"><img src="./assets/photos/photo-07.jpg" alt="Фотография из архива" loading="lazy"><figcaption>финансируется корпорацией «а давай поедим»</figcaption></figure>
       </div>
-      <button class="ghost-button" type="button" id="restart">Начать сначала ↺</button>
+      <button class="primary-button" type="button" data-next="complaint"><span>У меня есть вопросы</span><span>→</span></button>
+    </section>
+
+    <section class="screen" data-screen="complaint" aria-labelledby="complaint-title">
+      <div class="eyebrow">Официальная жалоба №1</div>
+      <h2 id="complaint-title">«Не обзывай меня».</h2>
+      <p class="subtitle">Требование поступало неоднократно. Система наконец-то решила его зарегистрировать.</p>
+      <div class="legal-card">
+        <div class="legal-card__stamp">ПРИНЯТО</div>
+        <span>Предмет жалобы</span>
+        <strong>систематическое обзывание гражданки</strong>
+        <small>Статус: рассматривается уже неприлично долго</small>
+      </div>
+      <div class="choice-grid choice-grid--compact">
+        <button class="choice-card complaint-choice" type="button" data-complaint="promise"><span class="choice-card__emoji">🤝</span><span class="choice-card__title">Обещаю больше не обзывать</span><span class="choice-card__meta">юридически сомнительное заявление</span></button>
+        <button class="choice-card complaint-choice" type="button" data-complaint="lawyer"><span class="choice-card__emoji">⚖️</span><span class="choice-card__title">Хочу адвоката</span><span class="choice-card__meta">наиболее безопасный вариант</span></button>
+      </div>
+      <p class="form-message local-reaction" id="complaint-reaction" aria-live="polite"></p>
+    </section>
+
+    <section class="screen" data-screen="deleted" aria-labelledby="deleted-title">
+      <div class="eyebrow">Дело №404 · уничтожение улик</div>
+      <h2 id="deleted-title">Куда делась переписка?</h2>
+      <p class="subtitle">Следствие восстановило события настолько, насколько это вообще возможно после того, что ты сделала.</p>
+      <div class="chat-evidence" aria-label="Реконструкция удалённой переписки">
+        <div class="chat-bubble chat-bubble--mine">Наша переписка ведь никуда не денется?</div>
+        <div class="chat-bubble chat-bubble--her">конечно 🙂</div>
+        <div class="chat-deleted">несколько тысяч сообщений были удалены</div>
+      </div>
+      <div class="choice-grid choice-grid--compact">
+        <button class="choice-card chat-choice" type="button" data-chat="magic"><span class="choice-card__emoji">✨</span><span class="choice-card__title">Она сама исчезла</span><span class="choice-card__meta">техническая версия</span></button>
+        <button class="choice-card chat-choice" type="button" data-chat="evidence"><span class="choice-card__emoji">🧹</span><span class="choice-card__title">Улики были уничтожены</span><span class="choice-card__meta">версия следствия</span></button>
+        <button class="choice-card chat-choice" type="button" data-chat="silence"><span class="choice-card__emoji">🙈</span><span class="choice-card__title">Никто ничего не видел</span><span class="choice-card__meta">позиция защиты</span></button>
+      </div>
+      <p class="form-message local-reaction" id="chat-reaction" aria-live="polite"></p>
+    </section>
+
+    <section class="screen" data-screen="cats" aria-labelledby="cats-title">
+      <div class="eyebrow">Проверка памяти · критический уровень</div>
+      <h2 id="cats-title">Как зовут твоих котов?</h2>
+      <p class="subtitle">Одного я реально запомнил. Прошу учитывать это как личное достижение.</p>
+      <div class="cat-known">
+        <span>Кот №1</span>
+        <strong>Бетон</strong>
+        <b>✓</b>
+      </div>
+      <form class="form-card" id="cat-form" novalidate>
+        <label for="cat-name">А вот второго кота зовут…</label>
+        <div class="input-wrap">
+          <input id="cat-name" name="cat-name" type="text" autocomplete="off" placeholder="введи имя, я правда забыл" maxlength="32" />
+          <span class="input-icon" aria-hidden="true">🐈</span>
+        </div>
+        <button class="primary-button" type="submit"><span>Спасти мою память</span><span>→</span></button>
+        <p class="form-message" id="cat-message" role="status" aria-live="polite"></p>
+      </form>
+      <div class="cat-result is-hidden" id="cat-result">
+        <span>Официально зафиксировано:</span>
+        <strong id="cat-result-name">Бетон и кто-то ещё</strong>
+        <p>Спасибо. Наконец-то я тоже узнал.</p>
+        <button class="primary-button" type="button" data-next="absurd"><span>Продолжить, пока я не забыл снова</span><span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="absurd" aria-labelledby="absurd-title">
+      <div class="eyebrow">Контрольный вопрос №7</div>
+      <h2 id="absurd-title">Что является главным признаком взрослого человека?</h2>
+      <p class="subtitle">Предыдущие пять вопросов засекречены. Шестого не было.</p>
+      <div class="choice-grid choice-grid--compact">
+        <button class="choice-card absurd-choice" type="button" data-absurd="bills"><span class="choice-card__emoji">🧾</span><span class="choice-card__title">Оплачивать счета вовремя</span><span class="choice-card__meta">сомнительная теория</span></button>
+        <button class="choice-card absurd-choice" type="button" data-absurd="sleep"><span class="choice-card__emoji">😴</span><span class="choice-card__title">Хотеть домой уже в 21:30</span><span class="choice-card__meta">есть научные признаки</span></button>
+        <button class="choice-card absurd-choice" type="button" data-absurd="pharmacy"><span class="choice-card__emoji">💊</span><span class="choice-card__title">Радоваться хорошей аптечке</span><span class="choice-card__meta">опасно близко к правде</span></button>
+        <button class="choice-card absurd-choice" type="button" data-absurd="none"><span class="choice-card__emoji">🤡</span><span class="choice-card__title">Делать вид, что понимаешь, что происходит</span><span class="choice-card__meta">наиболее популярный ответ</span></button>
+      </div>
+    </section>
+
+    <section class="screen screen--scroll" data-screen="research" aria-labelledby="research-title">
+      <div class="eyebrow">Результаты независимого исследования</div>
+      <h2 id="research-title">Правильного ответа не существует.</h2>
+      <p class="subtitle" id="absurd-reaction">Но система всё равно осудила твой выбор.</p>
+      <div class="stats-grid">
+        <div class="stat-card"><strong data-counter="97">0</strong><span>%</span><small>шанс сказать «да нормально всё»</small></div>
+        <div class="stat-card"><strong data-counter="404">0</strong><span></span><small>единиц найденной адекватности</small></div>
+        <div class="stat-card stat-card--wide"><strong>∞</strong><span></span><small>поводов отправить ещё один мем вместо нормального ответа</small></div>
+      </div>
+      <figure class="reference-card"><img src="./assets/photos/question-reference.jpg" alt="Скрин с забавными вопросами" loading="lazy"><figcaption>экспертиза нашла первоисточник методики. вопросы действительно забавные.</figcaption></figure>
+      <button class="primary-button" type="button" data-next="quiet"><span>Хватит научных данных</span><span>→</span></button>
+    </section>
+
+    <section class="screen screen--scroll" data-screen="quiet" aria-labelledby="quiet-title">
+      <div class="eyebrow eyebrow--success">А теперь без приколов. Почти.</div>
+      <h2 id="quiet-title">Вот эти кадры мне нравятся больше.</h2>
+      <p class="subtitle">Потому что любой нормальный архив должен содержать хотя бы пару фотографий, за которые не стыдно.</p>
+      <div class="memory-grid">
+        <figure><img src="./assets/photos/photo-02.jpg" alt="Тёплая фотография" loading="lazy"></figure>
+        <figure><img src="./assets/photos/photo-06.jpg" alt="Тёплая фотография" loading="lazy"></figure>
+        <figure class="memory-grid__wide"><img src="./assets/photos/photo-08.jpg" alt="Фотография с сердцем руками" loading="lazy"></figure>
+      </div>
+      <button class="primary-button" type="button" data-next="final"><span>И последнее</span><span>→</span></button>
+    </section>
+
+    <section class="screen screen--scroll" data-screen="final" aria-labelledby="final-title">
+      <div class="eyebrow eyebrow--success">С днём рождения 🤍</div>
+      <h2 id="final-title">Если серьёзно — пусть этот год будет хорошим.</h2>
+      <p class="final-copy">Чтобы рядом были свои люди, было больше поводов смеяться над полной ерундой, меньше поводов нервничать и намного больше моментов, которые потом можно будет добавить в этот архив.</p>
+      <div class="final-photo-wrap">
+        <div class="final-photo-glow"></div>
+        <img class="final-photo" src="./assets/photos/photo-08.jpg" alt="Финальная фотография" loading="lazy">
+      </div>
+      <p class="final-copy final-copy--small">Спасибо за мемы, разговоры и весь контекст, который невозможно объяснить постороннему человеку.</p>
+      <button class="primary-button" type="button" data-next="postcredit"><span>Закончить красиво</span><span>✦</span></button>
+    </section>
+
+    <section class="screen" data-screen="postcredit" aria-labelledby="postcredit-title">
+      <div class="eyebrow">Сцена после титров</div>
+      <figure class="photo-card photo-card--small"><img src="./assets/photos/photo-09.jpg" alt="Фотография после поздравления" loading="lazy"><figcaption>пользователь после прохождения поздравления</figcaption></figure>
+      <h2 id="postcredit-title">Всё. Можно отдыхать.</h2>
+      <p class="subtitle">Поздравление окончено. Деньги за сайт возврату не подлежат.</p>
+      <button class="ghost-button" type="button" id="restart">Пройти этот кошмар ещё раз ↺</button>
     </section>
   </main>
 
