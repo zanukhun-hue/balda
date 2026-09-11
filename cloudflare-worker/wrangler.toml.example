@@ -1,0 +1,7 @@
+name = "balda-answers"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+# Можно задать ALLOWED_ORIGIN как обычную переменную в Cloudflare.
+# Пример:
+# ALLOWED_ORIGIN = "https://zanukhun-hue.github.io"

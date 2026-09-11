@@ -16,6 +16,8 @@
   <div class="ambient ambient--two"></div>
   <div class="grain" aria-hidden="true"></div>
   <div id="particles" aria-hidden="true"></div>
+  <div id="floating-sparkles" aria-hidden="true"></div>
+  <div id="screen-flash" aria-hidden="true"></div>
 
   <main class="app-shell" id="app">
     <section class="screen screen--active" data-screen="gate" aria-labelledby="gate-title">
@@ -90,7 +92,7 @@
       <figure class="photo-card photo-card--hero">
         <div class="photo-card__tape"></div>
         <img src="./assets/photos/photo-05.jpg" alt="Архивная фотография" loading="eager" />
-        <figcaption>архивная съёмка · адекватность не подтверждена</figcaption>
+        <figcaption>архивный снимок · дело 001</figcaption>
       </figure>
       <button class="primary-button" type="button" data-next="archive"><span>Смотреть дальше, к сожалению</span><span>→</span></button>
     </section>
@@ -99,10 +101,12 @@
       <div class="eyebrow">Личный фотоархив</div>
       <h2 id="archive-title">Система утверждает, что это всё реально было.</h2>
       <p class="subtitle">Три документа, которые невозможно развидеть.</p>
-      <div class="polaroid-stack" aria-label="Подборка фотографий">
-        <figure class="polaroid polaroid--one"><img src="./assets/photos/photo-03.jpg" alt="Фотография из архива" loading="lazy"><figcaption>«нормальное фото» — попытка №47</figcaption></figure>
-        <figure class="polaroid polaroid--two"><img src="./assets/photos/photo-04.jpg" alt="Фотография из архива" loading="lazy"><figcaption>очки есть. план действий отсутствует.</figcaption></figure>
-        <figure class="polaroid polaroid--three"><img src="./assets/photos/photo-07.jpg" alt="Фотография из архива" loading="lazy"><figcaption>финансируется корпорацией «а давай поедим»</figcaption></figure>
+      <div class="polaroid-stage">
+        <div class="polaroid-stack" aria-label="Подборка фотографий">
+          <figure class="polaroid polaroid--one"><img src="./assets/photos/photo-03.jpg" alt="Фотография из архива" loading="lazy"><figcaption>документ 01</figcaption></figure>
+          <figure class="polaroid polaroid--two"><img src="./assets/photos/photo-04.jpg" alt="Фотография из архива" loading="lazy"><figcaption>документ 02</figcaption></figure>
+          <figure class="polaroid polaroid--three"><img src="./assets/photos/photo-07.jpg" alt="Фотография из архива" loading="lazy"><figcaption>документ 03</figcaption></figure>
+        </div>
       </div>
       <button class="primary-button" type="button" data-next="complaint"><span>У меня есть вопросы</span><span>→</span></button>
     </section>
@@ -163,7 +167,46 @@
         <span>Официально зафиксировано:</span>
         <strong id="cat-result-name">Бетон и кто-то ещё</strong>
         <p>Спасибо. Наконец-то я тоже узнал.</p>
-        <button class="primary-button" type="button" data-next="absurd"><span>Продолжить, пока я не забыл снова</span><span>→</span></button>
+        <button class="primary-button" type="button" data-next="roblox"><span>Продолжить, пока я не забыл снова</span><span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="roblox" aria-labelledby="roblox-title">
+      <div class="eyebrow">Проверка биографии</div>
+      <h2 id="roblox-title">Где мы вообще познакомились?</h2>
+      <p class="subtitle">Система уже всё знает. Но хочет посмотреть, не забыла ли ты легендарное место встречи.</p>
+      <div class="choice-grid choice-grid--compact">
+        <button class="choice-card trivia-choice" type="button" data-trivia="roblox"><span class="choice-card__emoji">🎮</span><span class="choice-card__title">В Roblox</span><span class="choice-card__meta">исторически достоверно</span></button>
+        <button class="choice-card trivia-choice" type="button" data-trivia="school"><span class="choice-card__emoji">🏫</span><span class="choice-card__title">В школе</span><span class="choice-card__meta">какая школа, ты чего</span></button>
+        <button class="choice-card trivia-choice" type="button" data-trivia="street"><span class="choice-card__emoji">🛣️</span><span class="choice-card__title">На улице</span><span class="choice-card__meta">слишком кинематографично</span></button>
+      </div>
+      <p class="form-message local-reaction" id="trivia-reaction" aria-live="polite"></p>
+    </section>
+
+    <section class="screen" data-screen="favorites" aria-labelledby="favorites-title">
+      <div class="eyebrow">Сбор жизненно важной информации</div>
+      <h2 id="favorites-title">Заполни анкету именинницы.</h2>
+      <p class="subtitle">Ничего необычного. Просто я решил наконец узнать базовые вещи, которые нормальные люди обычно уже помнят.</p>
+      <form class="form-card stacked-form" id="favorites-form" novalidate>
+        <label for="fav-color">Твой любимый цвет</label>
+        <div class="input-wrap">
+          <input id="fav-color" name="fav-color" type="text" autocomplete="off" placeholder="например: чёрный, розовый, зелёный..." maxlength="24" />
+          <span class="input-icon" aria-hidden="true">🎨</span>
+        </div>
+
+        <label for="fav-food">А любимая еда?</label>
+        <div class="input-wrap">
+          <input id="fav-food" name="fav-food" type="text" autocomplete="off" placeholder="всё, что вкусно. но всё же..." maxlength="32" />
+          <span class="input-icon" aria-hidden="true">🍟</span>
+        </div>
+
+        <button class="primary-button" type="submit"><span>Сохранить мои пробелы в памяти</span><span>→</span></button>
+        <p class="form-message" id="favorites-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="data-pill data-pill--stack is-hidden" id="favorites-result">
+        <span>Запомнить бы теперь:</span>
+        <strong id="favorites-output">—</strong>
       </div>
     </section>
 
@@ -188,7 +231,7 @@
         <div class="stat-card"><strong data-counter="404">0</strong><span></span><small>единиц найденной адекватности</small></div>
         <div class="stat-card stat-card--wide"><strong>∞</strong><span></span><small>поводов отправить ещё один мем вместо нормального ответа</small></div>
       </div>
-      <figure class="reference-card"><img src="./assets/photos/question-reference.jpg" alt="Скрин с забавными вопросами" loading="lazy"><figcaption>экспертиза нашла первоисточник методики. вопросы действительно забавные.</figcaption></figure>
+      <figure class="reference-card"><img src="./assets/photos/question-reference.jpg" alt="Скрин с забавными вопросами" loading="lazy"><figcaption>внутренний документ · приложение А</figcaption></figure>
       <button class="primary-button" type="button" data-next="quiet"><span>Хватит научных данных</span><span>→</span></button>
     </section>
 
@@ -211,6 +254,7 @@
       <div class="final-photo-wrap">
         <div class="final-photo-glow"></div>
         <img class="final-photo" src="./assets/photos/photo-08.jpg" alt="Финальная фотография" loading="lazy">
+        <div class="pixel-reveal" id="final-reveal" aria-hidden="true"></div>
       </div>
       <p class="final-copy final-copy--small">Спасибо за мемы, разговоры и весь контекст, который невозможно объяснить постороннему человеку.</p>
       <button class="primary-button" type="button" data-next="postcredit"><span>Закончить красиво</span><span>✦</span></button>
@@ -221,6 +265,8 @@
       <figure class="photo-card photo-card--small"><img src="./assets/photos/photo-09.jpg" alt="Фотография после поздравления" loading="lazy"><figcaption>пользователь после прохождения поздравления</figcaption></figure>
       <h2 id="postcredit-title">Всё. Можно отдыхать.</h2>
       <p class="subtitle">Поздравление окончено. Деньги за сайт возврату не подлежат.</p>
+      <button class="primary-button share-button" type="button" id="share-answers"><span class="share-button-text">Отправить ответы</span><span>↗</span></button>
+      <p class="form-message share-status" id="share-status" role="status" aria-live="polite"></p>
       <button class="ghost-button" type="button" id="restart">Пройти этот кошмар ещё раз ↺</button>
     </section>
   </main>
