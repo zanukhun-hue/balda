@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#120917" />
+  <meta name="description" content="Очень серьёзная система поздравления с днём рождения." />
+  <title>Секретная система поздравления</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient--one"></div>
+  <div class="ambient ambient--two"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="particles" aria-hidden="true"></div>
+
+  <main class="app-shell" id="app">
+    <section class="screen screen--active" data-screen="gate" aria-labelledby="gate-title">
+      <div class="eyebrow">Сверхсекретная система идентификации</div>
+      <div class="hero-mark" aria-hidden="true">
+        <span>✦</span>
+      </div>
+      <h1 id="gate-title">Когда у тебя<br><em>день рождения?</em></h1>
+      <p class="subtitle">Контрольный вопрос. Уровень сложности: подозрительно высокий.</p>
+
+      <form class="form-card" id="birthday-form" novalidate>
+        <label for="birthday">Дата рождения</label>
+        <div class="input-wrap">
+          <input
+            id="birthday"
+            name="birthday"
+            type="text"
+            inputmode="numeric"
+            autocomplete="bday"
+            placeholder="ДД.ММ.ГГГГ"
+            maxlength="10"
+            aria-describedby="form-message"
+          />
+          <span class="input-icon" aria-hidden="true">⌁</span>
+        </div>
+        <button class="primary-button" type="submit" id="check-button">
+          <span class="button-text">Проверить</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="microcopy">Мы не передадим дату третьим лицам. Первым двум — возможно.</p>
+    </section>
+
+    <section class="screen" data-screen="success" aria-labelledby="success-title">
+      <div class="status-orbit" aria-hidden="true">
+        <div class="status-orbit__ring"></div>
+        <div class="status-orbit__ring status-orbit__ring--two"></div>
+        <div class="status-orbit__core">✓</div>
+      </div>
+      <div class="eyebrow eyebrow--success">Личность почти подтверждена</div>
+      <h2 id="success-title">О, отлично.</h2>
+      <p class="big-copy">Молодец, что указала.</p>
+      <p class="punchline">А то я сам не знал просто.</p>
+      <div class="data-pill"><span>Получено:</span><strong id="birthday-output">—</strong></div>
+      <button class="primary-button primary-button--wide" type="button" data-next="assessment">
+        <span>Продолжить проверку</span><span aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section class="screen" data-screen="assessment" aria-labelledby="assessment-title">
+      <div class="eyebrow">Финальный этап серьёзного тестирования</div>
+      <h2 id="assessment-title">Как ощущения от нового уровня?</h2>
+      <p class="subtitle">Выбери максимально научный вариант.</p>
+
+      <div class="choice-grid" id="choice-grid">
+        <button class="choice-card" type="button" data-choice="young">
+          <span class="choice-card__emoji">✨</span>
+          <span class="choice-card__title">Всё ещё молода</span>
+          <span class="choice-card__meta">официальная версия</span>
+        </button>
+        <button class="choice-card" type="button" data-choice="back">
+          <span class="choice-card__emoji">🪑</span>
+          <span class="choice-card__title">Спина уже что-то знает</span>
+          <span class="choice-card__meta">неофициальная версия</span>
+        </button>
+        <button class="choice-card" type="button" data-choice="deny">
+          <span class="choice-card__emoji">🙈</span>
+          <span class="choice-card__title">Я отказываюсь отвечать</span>
+          <span class="choice-card__meta">самый мудрый выбор</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="verdict" aria-labelledby="verdict-title">
+      <div class="eyebrow">Результаты обработаны</div>
+      <div class="tiny-loader" aria-hidden="true"><span></span><span></span><span></span></div>
+      <h2 id="verdict-title">Ответ записан.</h2>
+      <p class="big-copy" id="choice-reaction">Спасибо за участие в исследовании.</p>
+      <p class="punchline">Он, кстати, вообще ни на что не влияет.</p>
+      <div class="fake-stat">
+        <span class="fake-stat__number" data-counter="100">0</span><span class="fake-stat__suffix">%</span>
+        <span class="fake-stat__label">вероятность, что сегодня надо принимать поздравления</span>
+      </div>
+      <button class="primary-button primary-button--wide" type="button" data-next="teaser">
+        <span>Ладно, дальше</span><span aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section class="screen" data-screen="teaser" aria-labelledby="teaser-title">
+      <div class="gift" id="gift" aria-hidden="true">
+        <div class="gift__lid"><span class="gift__bow gift__bow--left"></span><span class="gift__bow gift__bow--right"></span></div>
+        <div class="gift__box"><span class="gift__ribbon"></span></div>
+        <div class="gift__glow"></div>
+      </div>
+      <div class="eyebrow">Ну вот. Формальности закончились.</div>
+      <h2 id="teaser-title">По этому поводу я зачем-то сделал целый сайт.</h2>
+      <p class="subtitle">Да, можно было просто написать «с днём рождения». Но где тогда неоправданное количество анимаций?</p>
+      <button class="primary-button primary-button--wide" type="button" id="open-gift">
+        <span>Открыть поздравление</span><span aria-hidden="true">✦</span>
+      </button>
+      <p class="chapter-note">Следующая глава будет здесь: фото, ваши приколы, выборы и финальный reveal.</p>
+    </section>
+
+    <section class="screen" data-screen="coming" aria-labelledby="coming-title">
+      <div class="confetti-anchor" aria-hidden="true">🎂</div>
+      <div class="eyebrow eyebrow--success">Глава 1 готова</div>
+      <h2 id="coming-title">Теперь начинается настоящее поздравление.</h2>
+      <p class="subtitle">Каркас уже работает. Дальше сюда добавим ваши фотографии, локальные мемы, мини-выборы и нормальный финал вместо этой технической таблички.</p>
+      <div class="roadmap-card">
+        <div><span>01</span> Фотоархив / воспоминания</div>
+        <div><span>02</span> Пара абсурдных вопросов</div>
+        <div><span>03</span> Шуточная статистика</div>
+        <div><span>04</span> Финальное личное поздравление</div>
+      </div>
+      <button class="ghost-button" type="button" id="restart">Начать сначала ↺</button>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
